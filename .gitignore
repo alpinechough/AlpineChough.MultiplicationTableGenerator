@@ -1,0 +1,5 @@
+[Bb]in/
+[Ss]tyle[Cc]op.[Cc]ache
+*.sln
+*.csproj
+*.userprefs
