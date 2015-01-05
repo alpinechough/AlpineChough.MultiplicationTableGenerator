@@ -23,7 +23,8 @@ KEYFILE = \
 all:
 	test -d $(BIN) || mkdir $(BIN)
 	cp $(XWTDLLS)/* $(BIN)
-	$(MCS) -target:winexe -out:$(BIN)/MultiplicationTableGenerator.exe $(SOURCES) -keyfile:$(KEYFILE) $(REFERENCES) $(RESOURCES)
+	convert ./Icons/Icon16.png ./Icons/Icon32.png ./Icons/Icon64.png ./Icons/Icon128.png ./Icons/Icon256.png -colors 256 $(BIN)/MultiplicationTableGenerator.ico
+	$(MCS) -target:winexe -out:$(BIN)/MultiplicationTableGenerator.exe $(SOURCES) -keyfile:$(KEYFILE) $(REFERENCES) $(RESOURCES) -win32icon:$(BIN)/MultiplicationTableGenerator.ico
 	
 clean:
 	rm -f -R $(BIN)
